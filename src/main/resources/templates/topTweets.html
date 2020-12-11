@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <title>Top Tweets</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Top Tweets</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Content</th>
+                                <th>Retweets</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:if="${tweets.empty}">
+                                <td colspan="2">No Tweets Available</td>
+                            </tr>
+                            <tr th:each="tweet : ${tweets}">
+                                <td><span th:text="${tweet.id}">Id</span></td>
+                                <td><span th:text="${tweet.content}">Content</span></td>
+                                <td><span th:text="${tweet.retweets}">Retweets</span></td>
+                                <td><a class="btn btn-success btn-sm" href="#" th:href="@{/tweets/create}">Retweet</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <a class="btn btn-success" href="#" th:href="@{/tweets/create}">Post Tweet</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

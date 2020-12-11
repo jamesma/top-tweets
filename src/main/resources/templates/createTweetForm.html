@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Post Tweet</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="col-md-6">
+            <a class="btn btn-success" href="#" th:href="@{/tweets/top}">Back to Top Tweets</a>
+            <form action="#" class="form-horizontal"
+                  th:action="@{/tweets/save}"
+                  th:object="${form}"
+                  method="post">
+                <p>Content: <input type="text" th:field="*{content}"/></p>
+                <span class="pull-right">
+                    <input type="submit" id="submitButton" class="btn btn-success" th:value="Post">
+                    <input type="reset" id="resetButton" class="btn btn-danger" th:value="Reset"/>
+                </span>
+            </form>
+        </div>
+    </body>
+</html>
