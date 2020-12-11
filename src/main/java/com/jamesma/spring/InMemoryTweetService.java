@@ -12,10 +12,12 @@ public class InMemoryTweetService implements TweetService {
 
     static Map<Long, Tweet> tweetsDB = new HashMap<>();
 
+    @Override
     public List<Tweet> findAll() {
         return new ArrayList<>(tweetsDB.values());
     }
 
+    @Override
     public void save(TweetForm tweetForm) {
         Tweet tweet = new Tweet(tweetForm.getContent());
         tweet.setId(getNextId());
