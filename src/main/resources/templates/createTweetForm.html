@@ -13,9 +13,10 @@
             <a class="btn btn-success" href="#" th:href="@{/tweets/top}">Back to Top Tweets</a>
             <form action="#" class="form-horizontal"
                   th:action="@{/tweets/save}"
-                  th:object="${form}"
+                  th:object="${tweetForm}"
                   method="post">
                 <p>Content: <input type="text" th:field="*{content}"/></p>
+                <p th:if="${#fields.hasErrors('content')}" th:errors="*{content}">Content Error</p>
                 <span class="pull-right">
                     <input type="submit" id="submitButton" class="btn btn-success" th:value="Post">
                     <input type="reset" id="resetButton" class="btn btn-danger" th:value="Reset"/>

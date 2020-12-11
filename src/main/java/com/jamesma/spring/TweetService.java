@@ -6,5 +6,5 @@ public interface TweetService {
 
     List<Tweet> findAll();
 
-    void save(Tweet tweet);
+    void save(TweetForm tweetForm);
 }

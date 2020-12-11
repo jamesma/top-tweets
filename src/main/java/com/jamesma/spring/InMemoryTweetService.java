@@ -16,11 +16,9 @@ public class InMemoryTweetService implements TweetService {
         return new ArrayList<>(tweetsDB.values());
     }
 
-    public void save(Tweet tweet) {
-        long nextId = getNextId();
-        if (tweet.getId() == 0) {
-            tweet.setId(nextId);
-        }
+    public void save(TweetForm tweetForm) {
+        Tweet tweet = new Tweet(tweetForm.getContent());
+        tweet.setId(getNextId());
         tweetsDB.put(tweet.getId(), tweet);
     }
 
