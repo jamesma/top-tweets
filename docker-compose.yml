@@ -1,0 +1,7 @@
+version: '2'
+services:
+  top-tweets:
+    image: jamesma/top-tweets
+    container_name: top-tweets
+    ports:
+      - "8080:8080"
