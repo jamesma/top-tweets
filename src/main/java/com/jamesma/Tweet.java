@@ -7,11 +7,11 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Tweet {
+public class Tweet implements Comparable<Tweet> {
 
     private long id;
     private String content;
-    private long retweets;
+    private int retweets;
 
     protected Tweet() {}
 
@@ -21,5 +21,10 @@ public class Tweet {
 
     public void incrementRetweets() {
         retweets++;
+    }
+
+    @Override
+    public int compareTo(Tweet o) {
+        return retweets - o.getRetweets();
     }
 }

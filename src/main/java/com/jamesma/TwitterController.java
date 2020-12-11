@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+import static com.jamesma.Config.NUM_TOP_RETWEETS_TO_DISPLAY;
+
 @Controller
 @RequestMapping("/tweets")
 public class TwitterController {
@@ -15,9 +17,15 @@ public class TwitterController {
     @Autowired
     private InMemoryTweetService tweetService;
 
+    @GetMapping(value = "/all")
+    public String showTop(Model model) {
+        model.addAttribute("tweets", tweetService.findAll());
+        return "allTweets";
+    }
+
     @GetMapping(value = "/top")
     public String showAll(Model model) {
-        model.addAttribute("tweets", tweetService.findAll());
+        model.addAttribute("tweets", tweetService.findByTopRetweets(NUM_TOP_RETWEETS_TO_DISPLAY));
         return "topTweets";
     }
 

@@ -14,6 +14,10 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 @Configuration
 public class Config implements WebMvcConfigurer {
 
+    // Configuration pt of how many top retweeted tweets to display. This should be moved to
+    // a configuration file or service (e.g. Consul).
+    public static final int NUM_TOP_RETWEETS_TO_DISPLAY = 10;
+
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("topTweets");
