@@ -53,3 +53,7 @@ That said, if we foresee data volume to reach a point in the future (months? yea
 stored in a single instance, we should start with partitioning the data across DB instances. `Tweet ID` can be used as
 the Key for this partitioning strategy. There are multiple partitioning algorithms to ensure new Tweets are distributed
 evenly across shards. One of them is by taking a hash (MD5 checksum) of the key.
+
+Usually, I'd implement unit tests and integration tests to ensure there's at least 75% test coverage, but this isn't
+done due to the time constraint. The ideal approach is to take on a TDD approach by implementing Red (failing) tests,
+then implementing the interfaces and implementations to make them pass.
