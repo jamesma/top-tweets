@@ -1,4 +1,4 @@
-package com.jamesma.spring;
+package com.jamesma;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

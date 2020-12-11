@@ -1,4 +1,4 @@
-package com.jamesma.spring;
+package com.jamesma;
 
 import org.springframework.stereotype.Service;
 
