@@ -24,6 +24,14 @@ public class InMemoryTweetService implements TweetService {
         tweetsDB.put(tweet.getId(), tweet);
     }
 
+    @Override
+    public void retweet(long tweetId) {
+        Tweet tweet = tweetsDB.get(tweetId);
+        if (tweet != null) {
+            tweet.incrementRetweets();
+        }
+    }
+
     private Long getNextId() {
         return tweetsDB.keySet()
                 .stream()

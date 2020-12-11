@@ -35,7 +35,13 @@
                                 <td><span th:text="${tweet.id}">Id</span></td>
                                 <td><span th:text="${tweet.content}">Content</span></td>
                                 <td><span th:text="${tweet.retweets}">Retweets</span></td>
-                                <td><a class="btn btn-success btn-sm" href="#" th:href="@{/tweets/create}">Retweet</a></td>
+                                <td>
+                                    <form action="#" class="form-horizontal"
+                                          th:action="@{/tweets/retweet/{id}(id=${tweet.id})}"
+                                          method="post">
+                                        <input type="submit" id="submitButton" class="btn btn-success btn-sm" th:value="Retweet">
+                                    </form>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

@@ -18,4 +18,8 @@ public class Tweet {
     public Tweet(String content) {
         this.content = content;
     }
+
+    public void incrementRetweets() {
+        retweets++;
+    }
 }
