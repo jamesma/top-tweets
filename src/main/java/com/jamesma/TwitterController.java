@@ -18,13 +18,13 @@ public class TwitterController {
     private InMemoryTweetService tweetService;
 
     @GetMapping(value = "/all")
-    public String showTop(Model model) {
+    public String showAll(Model model) {
         model.addAttribute("tweets", tweetService.findAll());
         return "allTweets";
     }
 
     @GetMapping(value = "/top")
-    public String showAll(Model model) {
+    public String showTop(Model model) {
         model.addAttribute("tweets", tweetService.findByTopRetweets(NUM_TOP_RETWEETS_TO_DISPLAY));
         return "topTweets";
     }
