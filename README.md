@@ -35,6 +35,13 @@ Environment Set Up
 1. Hit `ctrl-C` to stop the stack that was started by `docker-compose up`
 2. All-in-one command to rebuild image and restart the service `mvn clean package && docker-compose rm -f && docker-compose up`
 
+Screenshots
+-----------
+
+![Top Tweets](/screenshots/top-tweets.png?raw=true)
+
+![Post Tweet](/screenshots/post-tweet.png?raw=true)
+
 Considerations
 --------------
 
